@@ -31,4 +31,5 @@ resource "aws_lambda_function" "test_lambda" {
   role             = aws_iam_role.lambda_exec_role.arn
   filename         = "${path.module}/code.zip"
   source_code_hash = filebase64sha256("${path.module}/code.zip")
+  timeout          = 10
 }
